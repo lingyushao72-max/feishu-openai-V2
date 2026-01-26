@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"os"
 	"start-feishubot/handlers"
 	"start-feishubot/initialization"
 	"start-feishubot/logger"
