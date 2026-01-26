@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"os"
 	"start-feishubot/handlers"
 	"start-feishubot/initialization"
 	"start-feishubot/logger"
@@ -42,7 +43,11 @@ func main() {
 		})
 	})
 	r.POST("/webhook/event",
-		sdkginext.NewEventHandlerFunc(eventHandler))
+		sdkginext.NewEventHandlerFunc(
+			eventHandler,
+			sdkginext.WithEncryptKey(os.Getenv("FEISHU_APP_ENCRYPT_KEY")),
+		),
+	)
 	r.POST("/webhook/card",
 		sdkginext.NewCardActionHandlerFunc(
 			cardHandler))
