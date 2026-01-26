@@ -43,11 +43,8 @@ func main() {
 		})
 	})
 	r.POST("/webhook/event",
-		sdkginext.NewEventHandlerFunc(
-			eventHandler,
-			sdkginext.WithEncryptKey(os.Getenv("FEISHU_APP_ENCRYPT_KEY")),
-		),
-	)
+	sdkginext.NewEventHandlerFunc(eventHandler),
+)
 	r.POST("/webhook/card",
 		sdkginext.NewCardActionHandlerFunc(
 			cardHandler))
