@@ -22,8 +22,6 @@ func main() {
 	pflag.Parse()
 	config := initialization.GetConfig()
 	 // 添加调试输出
-    fmt.Printf("DEBUG - APP_ENCRYPT_KEY: [%s]\n", config.FeishuAppEncryptKey)
-    fmt.Printf("DEBUG - APP_VERIFICATION_TOKEN: [%s]\n", config.FeishuAppVerificationToken)
 	initialization.LoadLarkClient(*config)
 	gpt := openai.NewChatGPT(*config)
 	handlers.InitHandlers(gpt, *config)
