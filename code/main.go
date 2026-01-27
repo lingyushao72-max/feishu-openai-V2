@@ -15,6 +15,7 @@ import (
 	"start-feishubot/services/openai"
 )
 
+
 func main() {
 	initialization.InitRoleList()
 	pflag.Parse()
