@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"context"
 	"start-feishubot/handlers"
 	"start-feishubot/initialization"
