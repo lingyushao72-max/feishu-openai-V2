@@ -1,13 +1,13 @@
 #  飞书
 BASE_URL: https://open.feishu.cn
-APP_ID: cli_axxx
-APP_SECRET: xxx
-APP_ENCRYPT_KEY: xxx
-APP_VERIFICATION_TOKEN: xxx
+APP_ID: cli_a9e2784a18389cd4
+APP_SECRET: mPMLc7PoH7o8nm0m4lY2MhOEMm6PgwWt
+APP_ENCRYPT_KEY: Mfk0HSzdp3m9rkXqSNIAPdHZUDcNajft
+APP_VERIFICATION_TOKEN: NJddry184w0eTrJpSKlocdBpKTrMmc4J
 # 请确保和飞书应用管理平台中的设置一致
 BOT_NAME: chatGpt
 # openAI key 支持负载均衡 可以填写多个key 用逗号分隔
-OPENAI_KEY: sk-xxx,sk-xxx,sk-xxx
+OPENAI_KEY: sk-xJKws27pSD45u4IGGVms8tjZ2YJ8M8MzH9xXAejq9ttf2uBZ
 # openAI model 指定模型，默认为 gpt-3.5-turbo
 # 可选参数有："gpt-4-1106-preview", "gpt-4-32K","gpt-4","gpt-3.5-turbo-16k", "gpt-3.5-turbo"，"gpt-3.5-turbo-16k","gpt-3.5-turbo-1106" 等
 #  如果使用gpt-4，请确认自己是否有接口调用白名单
@@ -23,7 +23,7 @@ USE_HTTPS: false
 CERT_FILE: cert.pem
 KEY_FILE: key.pem
 # openai 地址, 一般不需要修改, 除非你有自己的反向代理
-API_URL: https://api.openai.com
+API_URL: https://magic666.top
 # 代理设置, 例如 "http://127.0.0.1:7890", ""代表不使用代理
 HTTP_PROXY: ""
 # 是否开启流式接口返回

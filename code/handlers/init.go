@@ -30,21 +30,9 @@ func InitHandlers(gpt *openai.ChatGPT, config initialization.Config) {
 	handlers = NewMessageHandler(gpt, config)
 }
 
-func Handler(_ context.Context, event *larkim.P2MessageReceiveV1) error {
-	// 
-	e := event
-
-	go func() {
-		bgCtx := context.Background()
-
-		if err := handlers.msgReceivedHandler(bgCtx, e); err != nil {
-			logger.Errorf("msgReceivedHandler error: %v", err)
-		}
-	}()
-
-	return nil
+func Handler(ctx context.Context, event *larkim.P2MessageReceiveV1) error {
+	return handlers.msgReceivedHandler(ctx, event)
 }
-
 
 func ReadHandler(ctx context.Context, event *larkim.P2MessageReadV1) error {
 	readerId := event.Event.Reader.ReaderId.OpenId

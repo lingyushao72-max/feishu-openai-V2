@@ -24,9 +24,7 @@ func main() {
 	handlers.InitHandlers(gpt, *config)
 
 	eventHandler := dispatcher.NewEventDispatcher(
-		config.FeishuAppVerificationToken,
-		"",
-	).
+		config.FeishuAppVerificationToken, config.FeishuAppEncryptKey).
 		OnP2MessageReceiveV1(handlers.Handler).
 		OnP2MessageReadV1(func(ctx context.Context, event *larkim.P2MessageReadV1) error {
 			logger.Debugf("收到请求 %v", event.RequestURI)
@@ -34,10 +32,8 @@ func main() {
 		})
 
 	cardHandler := larkcard.NewCardActionHandler(
-		config.FeishuAppVerificationToken,
-		"",
-		handlers.CardHandler(),
-	)
+		config.FeishuAppVerificationToken, config.FeishuAppEncryptKey,
+		handlers.CardHandler())
 
 	r := gin.Default()
 	r.GET("/ping", func(c *gin.Context) {
@@ -46,8 +42,7 @@ func main() {
 		})
 	})
 	r.POST("/webhook/event",
-	sdkginext.NewEventHandlerFunc(eventHandler),
-)
+		sdkginext.NewEventHandlerFunc(eventHandler))
 	r.POST("/webhook/card",
 		sdkginext.NewCardActionHandlerFunc(
 			cardHandler))
