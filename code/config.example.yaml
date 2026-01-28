@@ -2,7 +2,7 @@
 BASE_URL: https://open.feishu.cn
 APP_ID: cli_a9e2784a18389cd4
 APP_SECRET: mPMLc7PoH7o8nm0m4lY2MhOEMm6PgwWt
-APP_ENCRYPT_KEY: Mfk0HSzdp3m9rkXqSNIAPdHZUDcNajft
+APP_ENCRYPT_KEY: jbyHS9P0VoAmIuZYvu2kn8HbtYs5MZJ2
 APP_VERIFICATION_TOKEN: NJddry184w0eTrJpSKlocdBpKTrMmc4J
 # 请确保和飞书应用管理平台中的设置一致
 BOT_NAME: chatGpt
